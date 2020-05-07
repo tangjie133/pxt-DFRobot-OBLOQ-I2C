@@ -3,30 +3,6 @@ const OBLOQ_MQTT_EASY_IOT_SERVER_CHINA = "iot.dfrobot.com.cn"
 const OBLOQ_MQTT_EASY_IOT_SERVER_EN = "iot.dfrobot.com"
 const microIoT_WEBHOOKS_URL = "maker.ifttt.com"
 const OBLOQ_MQTT_EASY_IOT_SERVER_TK = "api.thingspeak.com"
-const microIoT_Weather_URL = "api.dfrobot.top"
-
-enum NeoPixelColors {
-    //% block=red
-    Red = 0xFF0000,
-    //% block=orange
-    Orange = 0xFFA500,
-    //% block=yellow
-    Yellow = 0xFFFF00,
-    //% block=green
-    Green = 0x00FF00,
-    //% block=blue
-    Blue = 0x0000FF,
-    //% block=indigo
-    Indigo = 0x4b0082,
-    //% block=violet
-    Violet = 0x8a2be2,
-    //% block=purple
-    Purple = 0xFF00FF,
-    //% block=white
-    White = 0xFFFFFF,
-    //% block=black
-    Black = 0x000000
-}
 
 /**
  *Obloq implementation method.
@@ -56,13 +32,10 @@ namespace microIoT {
     let SETMQTT_ID = 0x05
     let SETMQTT_PASSWORLD = 0x06
     let SETHTTP_IP = 0x07
-    let SETHTTP_PORT = 0x08
 
     /*run command*/
-    let SEND_PING = 0x01
+    //let SEND_PING = 0x01
     let CONNECT_WIFI = 0x02
-    let RECONNECT_WIFI = 0x03
-    let DISCONECT_WIFI = 0x04
     let CONNECT_MQTT = 0x05
     let SUB_TOPIC0 = 0x06
     let SUB_TOPIC1 = 0x07
@@ -76,8 +49,6 @@ namespace microIoT {
     let PUB_TOPIC4 = 0x0F
     let GET_URL = 0x10
     let POST_URL = 0x11
-    let PUT_URL = 0x12
-    let GET_VERSION = 0x13
 
 
     /*read para value*/
@@ -119,29 +90,6 @@ namespace microIoT {
     let microIoT_IP = "0.0.0.0"
     let G_city = 0;
 
-    export enum aMotors {
-        //% blockId="M1" block="M1"
-        M1 = 0,
-        //% blockId="M2" block="M2"
-        M2 = 1,
-        //% blockId="ALL" block="ALL"
-        ALL = 2
-    }
-
-    export enum aServos {
-        //% blockId="S1" block="S1"
-        S1 = 0,
-        //% blockId="S2" block="S2"
-        S2 = 1
-    }
-
-    export enum Dir {
-        //% blockId="CW" block="CW"
-        CW = 0x0,
-        //% blockId="CCW" block="CCW"
-        CCW = 0x1
-    }
-
     export enum SERVERS {
         //% blockId=SERVERS_China block="EasyIOT_CN"
         China,
@@ -162,6 +110,7 @@ namespace microIoT {
     export class PacketMqtt {
         public message: string;
     }
+
     function microIoT_setPara(cmd: number, para: string): void {
         let buf = pins.createBuffer(para.length + 4);
         buf[0] = 0x1E
@@ -233,7 +182,7 @@ namespace microIoT {
     */
 
     //% weight=100
-    //% blockId=microIoT_wifi block="Micro:IoT setup |Wi-Fi: |name: %SSID| password：%PASSWORD"
+    //% blockId=microIoT_WIFI block="Micro:IoT setup |Wi-Fi: |name: %SSID| password：%PASSWORD"
     export function microIoT_WIFI(SSID: string, PASSWORD: string): void {
         microIoT_setPara(SETWIFI_NAME, SSID)
         microIoT_setPara(SETWIFI_PASSWORLD, PASSWORD)
@@ -410,7 +359,7 @@ namespace microIoT {
     */
 
     //% weight=99
-    //% blockId=IFTTT_MQTT_Weather_ThingSpeak_Get
+    //% blockId=microIoT_http_TK_GET
     //% block="ThingSpeak(Get) | key %KEY|value1 %field1| value2 %field2| value3 %field3|  value4 %field4| value5 %field5| value6 %field6| value7 %field7| timeout(ms) %time"
     export function microIoT_http_TK_GET(KEY: string, field1: string, field2: string, field3: string, field4: string, field5: string, field6: string, field7: string, time: number): void {
         microIoT_setPara(SETHTTP_IP, OBLOQ_MQTT_EASY_IOT_SERVER_TK)

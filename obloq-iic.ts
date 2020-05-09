@@ -7,7 +7,7 @@ const OBLOQ_MQTT_EASY_IOT_SERVER_TK = "api.thingspeak.com"
 /**
  *Obloq implementation method.
  */
-//% weight=10 color=#e7660b icon="\uf1eb" block="OBLOQ-IIC"
+//% weight=10 color=#e7660b icon="\uf1eb" block="OBLOQ-I2C"
 namespace microIoT {
     let IIC_ADDRESS = 0x16
     let Topic0CallBack: Action = null;
@@ -356,6 +356,7 @@ namespace microIoT {
     /**
     * ThingSpeak configured and sent data
     * @param KEY to KEY ,eg: "your write api key"
+    * @param time set timeout, eg: 10000
     */
 
     //% weight=99

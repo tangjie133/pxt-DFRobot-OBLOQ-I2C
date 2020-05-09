@@ -8,8 +8,6 @@
     },
     "files": [
         "README.md",
-        "main.blocks",
-        "main.ts",
         "obloq-iic.ts"
     ],
     "testFiles": [

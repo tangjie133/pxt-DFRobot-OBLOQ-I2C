@@ -182,7 +182,7 @@ namespace microIoT {
     */
 
     //% weight=100
-    //% blockId=microIoT_WIFI block="Micro:IoT setup |Wi-Fi: |name: %SSID| password：%PASSWORD"
+    //% blockId=OBLOQ-I2C_WIFI block="OBLOQ-I2C setup |Wi-Fi: |name: %SSID| password：%PASSWORD"
     export function microIoT_WIFI(SSID: string, PASSWORD: string): void {
         microIoT_setPara(SETWIFI_NAME, SSID)
         microIoT_setPara(SETWIFI_PASSWORLD, PASSWORD)
@@ -203,7 +203,7 @@ namespace microIoT {
 
     //% weight=100
     //% blockExternalInputs=1
-    //% blockId=microIoT_MQTT block="Micro:IoT setup mqtt|IOT_ID(user): %IOT_ID| IOT_PWD(password) :%IOT_PWD|(default topic_0) Topic: %IOT_TOPIC|IP:%IP server:%SERVERS"
+    //% blockId=OBLOQ-I2C_MQTT block="OBLOQ-I2C setup mqtt|IOT_ID(user): %IOT_ID| IOT_PWD(password) :%IOT_PWD|(default topic_0) Topic: %IOT_TOPIC|IP:%IP server:%SERVERS"
     export function microIoT_MQTT(/*SSID: string, PASSWORD: string,*/
         IOT_ID: string, IOT_PWD: string,
         IOT_TOPIC: string,IP: string, servers: SERVERS):
@@ -241,7 +241,6 @@ namespace microIoT {
     // export function microIoT_add_topic(top: TOPIC, IOT_TOPIC: string): void {
     //     microIoT_ParaRunCommand((top + 0x06), IOT_TOPIC);
     //     microIoT_CheckStatus("SubTopicOK");
-
     // }
 
     /**
@@ -250,7 +249,7 @@ namespace microIoT {
      */
 
     //% weight=99
-    //% blockId=microIoT_SendMessage block="MQTT Send Message %string| to |%TOPIC"
+    //% blockId=OBLOQ-I2C_SendMessage block="MQTT Send Message %string| to |%TOPIC"
     export function microIoT_SendMessage(Mess: string, Topic: TOPIC): void {
         let topic = 0
 
@@ -323,7 +322,7 @@ namespace microIoT {
     //% weight=80
     //% receive.fieldEditor="gridpicker" receive.fieldOptions.columns=3
     //% send.fieldEditor="gridpicker" send.fieldOptions.columns=3
-    //% blockId=microIoT_http_IFTTT
+    //% blockId=OBLOQ-I2C_http_IFTTT
     //% block="Webhooks config:|event: %EVENT|key: %KEY|"
     export function microIoT_http_IFTTT(EVENT: string, KEY: string): void {
         microIoT_WEBHOOKS_EVENT = EVENT
@@ -360,7 +359,7 @@ namespace microIoT {
     */
 
     //% weight=99
-    //% blockId=microIoT_http_TK_GET
+    //% blockId=OBLOQ-I2C_http_TK_GET
     //% block="ThingSpeak(Get) | key %KEY|value1 %field1| value2 %field2| value3 %field3|  value4 %field4| value5 %field5| value6 %field6| value7 %field7| timeout(ms) %time"
     export function microIoT_http_TK_GET(KEY: string, field1: string, field2: string, field3: string, field4: string, field5: string, field6: string, field7: string, time: number): void {
         microIoT_setPara(SETHTTP_IP, OBLOQ_MQTT_EASY_IOT_SERVER_TK)
@@ -376,7 +375,7 @@ namespace microIoT {
     */
 
     //% weight=78
-    //% blockId=microIoT_http_post
+    //% blockId=OBLOQ-I2C_http_post
     //% block="IFTTT(post) | value1 %value1| value2 %value2| value3 %value3| timeout(ms) %time"
     export function microIoT_http_post(value1: string, value2: string, value3: string, time: number): void {
         microIoT_setPara(SETHTTP_IP, microIoT_WEBHOOKS_URL)

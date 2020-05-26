@@ -233,16 +233,16 @@ namespace microIoT {
      * Add an MQTT subscription
      */
 
-    //% weight=200
-    //% blockId=microIoT_add_topic
-    //% block="subscribe additional %top |: %IOT_TOPIC"
-    //% top.fieldEditor="gridpicker" top.fieldOptions.columns=2
-    //% advanced=true
-    export function microIoT_add_topic(top: TOPIC, IOT_TOPIC: string): void {
-        microIoT_ParaRunCommand((top + 0x06), IOT_TOPIC);
-        microIoT_CheckStatus("SubTopicOK");
+    // //% weight=200
+    // //% blockId=microIoT_add_topic
+    // //% block="subscribe additional %top |: %IOT_TOPIC"
+    // //% top.fieldEditor="gridpicker" top.fieldOptions.columns=2
+    // //% advanced=true
+    // export function microIoT_add_topic(top: TOPIC, IOT_TOPIC: string): void {
+    //     microIoT_ParaRunCommand((top + 0x06), IOT_TOPIC);
+    //     microIoT_CheckStatus("SubTopicOK");
 
-    }
+    // }
 
     /**
      * MQTT sends information to the corresponding subscription

@@ -233,49 +233,49 @@ namespace microIoT {
      * Add an MQTT subscription
      */
 
-    // //% weight=200
-    // //% blockId=microIoT_add_topic
-    // //% block="subscribe additional %top |: %IOT_TOPIC"
-    // //% top.fieldEditor="gridpicker" top.fieldOptions.columns=2
-    // //% advanced=true
-    // export function microIoT_add_topic(top: TOPIC, IOT_TOPIC: string): void {
-    //     microIoT_ParaRunCommand((top + 0x06), IOT_TOPIC);
-    //     microIoT_CheckStatus("SubTopicOK");
-    // }
+    //% weight=200
+    //% blockId=microIoT_add_topic
+    //% block="subscribe additional %top |: %IOT_TOPIC"
+    //% top.fieldEditor="gridpicker" top.fieldOptions.columns=2
+    //% advanced=true
+    export function microIoT_add_topic(top: TOPIC, IOT_TOPIC: string): void {
+        microIoT_ParaRunCommand((top + 0x06), IOT_TOPIC);
+        microIoT_CheckStatus("SubTopicOK");
+    }
 
     /**
      * MQTT sends information to the corresponding subscription
      * @param Mess to Mess ,eg: "mess"
      */
 
-    //% weight=99
-    //% blockId=OBLOQ-I2C_SendMessage block="MQTT Send Message %string| to |%TOPIC"
-    export function microIoT_SendMessage(Mess: string, Topic: TOPIC): void {
-        let topic = 0
+    // //% weight=99
+    // //% blockId=OBLOQ-I2C_SendMessage block="MQTT Send Message %string| to |%TOPIC"
+    // export function microIoT_SendMessage(Mess: string, Topic: TOPIC): void {
+    //     let topic = 0
 
-        switch (Topic) {
-            case TOPIC.topic_0:
-                topic = PUB_TOPIC0
-                break;
-            case TOPIC.topic_1:
-                topic = PUB_TOPIC1
-                break;
-            case TOPIC.topic_2:
-                topic = PUB_TOPIC2
-                break;
-            case TOPIC.topic_3:
-                topic = PUB_TOPIC3
-                break;
-            case TOPIC.topic_4:
-                topic = PUB_TOPIC4
-                break;
-            default:
-                break;
+    //     switch (Topic) {
+    //         case TOPIC.topic_0:
+    //             topic = PUB_TOPIC0
+    //             break;
+    //         case TOPIC.topic_1:
+    //             topic = PUB_TOPIC1
+    //             break;
+    //         case TOPIC.topic_2:
+    //             topic = PUB_TOPIC2
+    //             break;
+    //         case TOPIC.topic_3:
+    //             topic = PUB_TOPIC3
+    //             break;
+    //         case TOPIC.topic_4:
+    //             topic = PUB_TOPIC4
+    //             break;
+    //         default:
+    //             break;
 
-        }
-        microIoT_ParaRunCommand(topic, Mess)
+    //     }
+    //     microIoT_ParaRunCommand(topic, Mess)
 
-    }
+    // }
 
     function microIoT_callback(top: TOPIC, a: Action): void {
         switch (top) {

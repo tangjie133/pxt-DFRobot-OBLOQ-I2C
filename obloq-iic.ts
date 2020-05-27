@@ -228,6 +228,10 @@ namespace microIoT {
         serial.writeString("sub topic ok\r\n");
 
     }
+    
+    /**
+     * Add an MQTT subscription
+     */
 
     //% weight=200
     //% blockId=microIoT_add_topic

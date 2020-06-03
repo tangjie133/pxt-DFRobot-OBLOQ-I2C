@@ -1,5 +1,5 @@
 {
-    "name": "pxt-dfrobot-obloq-iic",
+    "name": "DFRobot_OBLOQ_I2C",
     "version": "0.0.2",
     "description": "",
     "dependencies": {

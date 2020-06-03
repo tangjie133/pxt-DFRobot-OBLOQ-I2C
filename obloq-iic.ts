@@ -17,9 +17,6 @@ const OBLOQ_MQTT_EASY_IOT_SERVER_EN = "iot.dfrobot.com"
 const microIoT_WEBHOOKS_URL = "maker.ifttt.com"
 const OBLOQ_MQTT_EASY_IOT_SERVER_TK = "api.thingspeak.com"
 
-/**
- *Obloq implementation method.
- */
 //% weight=10 color=#e7660b icon="\uf1eb" block="OBLOQ_I2C"
 namespace microIoT {
     let IIC_ADDRESS = 0x16
@@ -47,7 +44,6 @@ namespace microIoT {
     let SETHTTP_IP = 0x07
 
     /*run command*/
-    //let SEND_PING = 0x01
     let CONNECT_WIFI = 0x02
     let CONNECT_MQTT = 0x05
     let SUB_TOPIC0 = 0x06
@@ -84,7 +80,6 @@ namespace microIoT {
     let SUB_TOPIC_OK = 0x01
     let SUB_TOPIC_Ceiling = 0x02
    
-
     let microIoTStatus = ""
     let WIFI_NAME = ""
     let WIFI_PASSWORLD = ""
@@ -244,6 +239,7 @@ namespace microIoT {
     
     /**
      * Add an MQTT subscription
+     * @param IOT_TOPIC ,eg: "yourIotTopic"
      */
 
     //% weight=70
@@ -363,11 +359,11 @@ namespace microIoT {
         }
     }
 
-     /**
-    * ThingSpeak configured and sent data
-    * @param KEY to KEY ,eg: "your write api key"
-    * @param time set timeout, eg: 10000
-    */
+    /**
+     * ThingSpeak configured and sent data
+     * @param KEY to KEY ,eg: "your write api key"
+     * @param field1 ,eg: 2020
+     */
 
     //% weight=30
     //% blockId=naturalScience_microIoT_http_TK_GET
@@ -384,7 +380,9 @@ namespace microIoT {
     /**
      * IFTTT send data
      * time(ms): private long maxWait
-     * @param time set timeout, eg: 10000
+     * @param value1 ,eg: "Hi"
+     * @param value2 ,eg: "DFRobot"
+     * @param value3 ,eg: "2020"
     */
 
     //% weight=40

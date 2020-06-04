@@ -258,7 +258,7 @@ namespace microIoT {
 
 
     //% weight=80
-    //% blockId=OBLOQ-I2C_SendMessage block="MQTT Send Message %string to %TOPIC"
+    //% blockId=OBLOQ-I2C_SendMessage block="send message %string to %TOPIC"
     export function microIoT_SendMessage(Mess: string, Topic: TOPIC): void {
         let topic = 0
         switch (Topic) {
@@ -310,7 +310,7 @@ namespace microIoT {
      * MQTT processes the subscription when receiving message
      */
     //% weight=60
-    //% blockId=obloq_mqtt_callback_user_more block="MQTT on %top received"
+    //% blockId=obloq_mqtt_callback_user_more block="on %top received"
     //% top.fieldEditor="gridpicker" top.fieldOptions.columns=2
     export function microIoT_MQTT_Event(top: TOPIC, cb: (message: string) => void) {
         microIoT_callback(top, () => {
@@ -369,7 +369,7 @@ namespace microIoT {
     //% blockId=naturalScience_microIoT_http_TK_GET
     //% expandableArgumentMode="enabled"
     //% inlineInputMode=inline
-    //% block="ThingSpeak(Get) key: %KEY value1: %field1 || value2: %field2 value3: %field3 value4: %field4 value5: %field5 value6: %field6 value7: %field7" 
+    //% block="ThingSpeak configured key: %KEY  send value1: %field1 || value2: %field2 value3: %field3 value4: %field4 value5: %field5 value6: %field6 value7: %field7" 
     export function microIoT_http_TK_GET(KEY: string, field1: string, field2?: string, field3?: string, field4?: string, field5?: string, field6?: string, field7?: string): void {
         microIoT_setPara(SETHTTP_IP, OBLOQ_MQTT_EASY_IOT_SERVER_TK)
         let tempStr = ""
@@ -387,23 +387,13 @@ namespace microIoT {
 
     //% weight=40
     //% blockId=OBLOQ-I2C_http_post
-    //% block="IFTTT(post) value1 %value1 value2 %value2 value3 %value3"
+    //% block="IFTTT send value1: %value1 value2: %value2 value3: %value3"
     export function microIoT_http_post(value1: string, value2: string, value3: string): void {
         microIoT_setPara(SETHTTP_IP, microIoT_WEBHOOKS_URL)
         let tempStr = ""
         tempStr = "trigger/" + microIoT_WEBHOOKS_EVENT + "/with/key/" + microIoT_WEBHOOKS_KEY + ",{\"value1\":\"" + value1 + "\",\"value2\":\"" + value2 + "\",\"value3\":\"" + value3 + "\" }" + "\r"
         microIoT_ParaRunCommand(POST_URL, tempStr)
     }
-
-  
-
-   
-
-  
-
- 
-
-  
 
     function microIoT_GetData(len: number): void {
         RECDATA = ""

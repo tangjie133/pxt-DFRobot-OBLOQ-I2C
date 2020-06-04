@@ -8,7 +8,8 @@
     },
     "files": [
         "README.md",
-        "obloq-iic.ts"
+        "obloq-iic.ts",
+		 "_locales/zh/DFRobot_OBLOQ_I2C-strings.json"
     ],
     "testFiles": [
         "test.ts"

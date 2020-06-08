@@ -1,31 +1,62 @@
+# NaturalScience
 
-> 在 [https://tangjie133.github.io/pxt-dfrobot-obloq-iic/](https://tangjie133.github.io/pxt-dfrobot-obloq-iic/) 打开此页面
+[无](无)
+## Basic usage
 
-## 用作扩展
+* Wi-Fi configuration module：connect the network via configuration module
 
-此仓库可以作为 **插件** 添加到 MakeCode 中。
+```blocks
 
-* 打开 [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* 点击 **新项目**
-* 点击齿轮图标菜单下的 **扩展**
-* 搜索 **https://github.com/tangjie133/pxt-dfrobot-obloq-iic** 并导入
+    microIoT.microIoT_WIFI("dfrobotGuest", "dfrobot2020")
 
-## 编辑此项目 ![构建状态标志](https://github.com/tangjie133/pxt-dfrobot-obloq-iic/workflows/MakeCode/badge.svg)
+```
 
-在 MakeCode 中编辑此仓库。
+* MQTT platform access configuration: access to Easyiot_ CN, EasyIOT_ EN, SIOT platforms via configuration module
 
-* 打开 [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* 点击 **导入**，然后点击 **导入 URL**
-* 粘贴 **https://github.com/tangjie133/pxt-dfrobot-obloq-iic** 并点击导入
+```blocks
 
-## 积木块预览
+    input.onButtonPressed(Button.A, function () {
+        microIoT.microIoT_SendMessage("mess", microIoT.TOPIC.topic_0)
+    })
+    microIoT.microIoT_WIFI("dfrobotGuest", "dfrobot2020")
+    microIoT.microIoT_MQTT(
+        "yourIotId",
+        "yourIotPwd",
+        "yourIotTopic",
+        microIoT.SERVERS.China
+    )
+    microIoT.microIoT_add_topic(microIoT.TOPIC.topic_1, "yourIotTopic")
 
-此图像显示主分支中最后一次提交的块代码。
-此图像可能需要几分钟才能刷新。
+```
+* IFTTT platform configuration: access to IFTTT via configuration module  
 
-![块的渲染视图](https://github.com/tangjie133/pxt-dfrobot-obloq-iic/raw/master/.github/makecode/blocks.png)
+```blocks
 
-#### 元数据 (用于搜索、渲染)
+    input.onButtonPressed(Button.A, function () {
+    microIoT.microIoT_http_post("Hi", "DFRobot", "2020")
+    })
+    microIoT.microIoT_WIFI("dfrobotGuest", "dfrobot2020")
+    microIoT.microIoT_http_IFTTT("yourEvent", "yourKey")
+
+```
+* ThingSpeak platform configuration: send information to ThingSpeak via configuration module 
+
+```blocks
+
+    input.onButtonPressed(Button.A, function () {
+    microIoT.microIoT_http_TK_GET("your write api key", "2020")
+    })
+    microIoT.microIoT_WIFI("dfrobotGuest", "dfrobot2020")
+
+
+```
+
+## License
+
+MIT
+
+Copyright (c) 2020, microbit/micropython Chinese community  
+
+## Supported targets
 
 * for PXT/microbit
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>

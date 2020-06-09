@@ -1,6 +1,6 @@
 {
     "microIoT.microIoT_WIFI|block":"Wi-Fi 配置 名称: %SSID 密码: %PASSWORD",
-    "microIoT.microIoT_MQTT|block":"MQTT 配置|IOT_ID(user): %IOT_ID|IOT_PWD(password): %IOT_PWD|Topic(default topic_0): %IOT_TOPIC|server: %SERVERS||IP: %IP",
+    "microIoT.microIoT_MQTT|block":"MQTT 配置|IOT_ID(用户): %IOT_ID|IOT_PWD(密码): %IOT_PWD|Topic(默认topic_0): %IOT_TOPIC|服务器: %SERVERS||IP: %IP",
     "microIoT.microIoT_SendMessage|block":"发送信息 %string 到 %TOPIC",
     "microIoT.microIoT_add_topic|block":"新增订阅 %top : %IOT_TOPIC",
     "microIoT.microIoT_MQTT_Event|block":"当 %top 收到",

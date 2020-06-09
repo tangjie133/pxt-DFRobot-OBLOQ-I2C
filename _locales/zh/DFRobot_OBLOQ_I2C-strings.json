@@ -3,7 +3,7 @@
     "microIoT.microIoT_MQTT|block":"MQTT 配置|IOT_ID(用户): %IOT_ID|IOT_PWD(密码): %IOT_PWD|Topic(默认topic_0): %IOT_TOPIC|服务器: %SERVERS||IP: %IP",
     "microIoT.microIoT_SendMessage|block":"发送信息 %string 到 %TOPIC",
     "microIoT.microIoT_add_topic|block":"新增订阅 %top : %IOT_TOPIC",
-    "microIoT.microIoT_MQTT_Event|block":"当 %top 收到",
+    "microIoT.microIoT_MQTT_Event|block":"当 收到 %top",
     "microIoT.microIoT_http_IFTTT|block":"IFTTT 配置 事件: %EVENT 密钥: %KEY",
     "microIoT.microIoT_http_post|block":"IFTTT 发送 值1: %value1 值2: %value2 值3: %value3",
     "microIoT.microIoT_http_TK_GET|block":"ThingSpeak 配置 密钥: %KEY  发送 值1: %field1 || 值2: %field2 值3: %field3 值4: %field4 值5: %field5 值6: %field6 值7: %field7"

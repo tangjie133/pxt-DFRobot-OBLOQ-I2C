@@ -253,7 +253,7 @@ namespace microIoT {
 
     /**
      * MQTT sends information to the corresponding subscription
-     * @param Mess to Mess ,eg: "mess"
+     * @param Mess to Mess ,eg: "message"
      */
 
 
@@ -310,7 +310,7 @@ namespace microIoT {
      * MQTT processes the subscription when receiving message
      */
     //% weight=60
-    //% blockId=obloq_mqtt_callback_user_more block="on %top received"
+    //% blockId=obloq_mqtt_callback_user_more block="on received %top "
     //% top.fieldEditor="gridpicker" top.fieldOptions.columns=2
     export function microIoT_MQTT_Event(top: TOPIC, cb: (message: string) => void) {
         microIoT_callback(top, () => {

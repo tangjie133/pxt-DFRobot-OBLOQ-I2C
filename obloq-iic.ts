@@ -200,7 +200,7 @@ namespace microIoT {
     }
 
     /**
-     * MQTT configuration
+     * Access to EasyIOT_CN, SIOT, EasyIOT_EN by configuring this module
      * @param SSID to SSID ,eg: "yourSSID"
      * @param PASSWORD to PASSWORD ,eg: "yourPASSWORD"
      * @param IOT_ID to IOT_ID ,eg: "yourIotId"
@@ -244,7 +244,7 @@ namespace microIoT {
 
     //% weight=70
     //% blockId=microIoT_add_topic
-    //% block="subscribe additional %top : %IOT_TOPIC"
+    //% block="subscribe to additional %top : %IOT_TOPIC"
     //% top.fieldEditor="gridpicker" top.fieldOptions.columns=2
     export function microIoT_add_topic(top: TOPIC, IOT_TOPIC: string): void {
         microIoT_ParaRunCommand((top + 0x06), IOT_TOPIC);

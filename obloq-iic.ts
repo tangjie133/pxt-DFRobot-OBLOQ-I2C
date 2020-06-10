@@ -191,7 +191,7 @@ namespace microIoT {
     */
 
     //% weight=100
-    //% blockId=OBLOQ-I2C_WIFI block="Wi-Fi configure name: %SSID password: %PASSWORD"
+    //% blockId=OBLOQ-I2C_WIFI block="Wi-Fi configure name: %SSID password: %PASSWORD start connection"
     export function microIoT_WIFI(SSID: string, PASSWORD: string): void {
         microIoT_setPara(SETWIFI_NAME, SSID)
         microIoT_setPara(SETWIFI_PASSWORLD, PASSWORD)

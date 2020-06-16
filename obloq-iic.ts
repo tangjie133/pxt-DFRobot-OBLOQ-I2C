@@ -177,7 +177,7 @@ namespace microIoT {
     function microIoT_CheckStatus(cmd: string): void {
         while (true) {
             if (microIoTStatus == cmd) {
-                serial.writeString("OKOK\r\n");
+                //serial.writeString("OKOK\r\n");
                 return;
             }
             basic.pause(50);
@@ -226,15 +226,15 @@ namespace microIoT {
         microIoT_setPara(SETMQTT_PORT, "1883")//1883
         microIoT_setPara(SETMQTT_ID, IOT_ID)
         microIoT_setPara(SETMQTT_PASSWORLD, IOT_PWD)
-        serial.writeString("wifi conneced ok\r\n");
+        //serial.writeString("wifi conneced ok\r\n");
         microIoT_runCommand(CONNECT_MQTT);
         microIoT_CheckStatus("MQTTConnected");
-        serial.writeString("mqtt connected\r\n");
+        //serial.writeString("mqtt connected\r\n");
       
         Topic_0 = IOT_TOPIC
         microIoT_ParaRunCommand(SUB_TOPIC0, IOT_TOPIC);
         microIoT_CheckStatus("SubTopicOK");
-        serial.writeString("sub topic ok\r\n");
+        //serial.writeString("sub topic ok\r\n");
 
     }
     
@@ -381,11 +381,11 @@ namespace microIoT {
     //% blockId=naturalScience_microIoT_http_TK_GET
     //% expandableArgumentMode="enabled"
     //% inlineInputMode=inline
-    //% block="ThingSpeak send value1: %field1 || value2: %field2 value3: %field3 value4: %field4 value5: %field5 value6: %field6 value7: %field7" 
-    export function microIoT_http_TK_GET(field1: string, field2?: string, field3?: string, field4?: string, field5?: string, field6?: string, field7?: string): void {
+    //% block="ThingSpeak send value1: %field1 || value2: %field2 value3: %field3 value4: %field4 value5: %field5 value6: %field6 value7: %field7 value8: %field7" 
+    export function microIoT_http_TK_GET(field1: string, field2?: string, field3?: string, field4?: string, field5?: string, field6?: string, field7?: string, field8?: string): void {
         microIoT_setPara(SETHTTP_IP, OBLOQ_MQTT_EASY_IOT_SERVER_TK)
         let tempStr = ""
-        tempStr = "update?api_key=" + microIoT_THINGSPEAK_KEY + "&field1=" + field1 + "&field2=" + field2 + "&field3=" + field3 + "&field4=" + field4 + "&field5=" + field5 + "&field6=" + field6 + "&field7=" + field7 + "\r"
+        tempStr = "update?api_key=" + microIoT_THINGSPEAK_KEY + "&field1=" + field1 + "&field2=" + field2 + "&field3=" + field3 + "&field4=" + field4 + "&field5=" + field5 + "&field6=" + field6 + "&field7=" + field7 + "&field8=" + field8 + "\r"
         microIoT_ParaRunCommand(GET_URL, tempStr);
     }
 

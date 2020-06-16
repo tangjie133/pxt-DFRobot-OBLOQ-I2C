@@ -1,5 +1,5 @@
 {
-    "name": "DFRobot_OBLOQ_I2C",
+    "name": "DFRobot_WiFi_IoT_Module(I2C)",
     "version": "0.0.11",
     "description": "",
     "dependencies": {
@@ -9,7 +9,7 @@
     "files": [
         "README.md",
         "obloq-iic.ts",
-        "_locales/zh/DFRobot_OBLOQ_I2C-strings.json"
+        "_locales/zh/DFRobot_WiFi_IoT_Module(I2C)-strings.json"
     ],
     "testFiles": [
         "test.ts"

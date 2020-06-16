@@ -1,6 +1,6 @@
 # NaturalScience
 
-[无](无)
+[A WIFI-IoT module that can be easily used on IFTTT ThingSpeak  EasyIoT.](无)
 ## Basic usage
 
 * Wi-Fi configuration module：connect the network via configuration module

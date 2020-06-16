@@ -2,7 +2,7 @@
  * @file pxt-DFRobot_Maqueenplus/maqueenplus.ts
  * @brief DFRobot's OBLOQ_I2C makecode library.
  * @n [Get the module here]()
- * @n
+ * @n A WIFI-IoT module that can be easily used on IFTTT ThingSpeak  EasyIoT.
  * 
  * @copyright    [DFRobot](http://www.dfrobot.com), 2016
  * @copyright    MIT Lesser General Public License
@@ -17,7 +17,7 @@ const OBLOQ_MQTT_EASY_IOT_SERVER_EN = "iot.dfrobot.com"
 const microIoT_WEBHOOKS_URL = "maker.ifttt.com"
 const OBLOQ_MQTT_EASY_IOT_SERVER_TK = "api.thingspeak.com"
 
-//% weight=10 color=#e7660b icon="\uf1eb" block="OBLOQ_I2C"
+//% weight=10 color=#e7660b icon="\uf1eb" block="WiFi_IoT_Module(I2C)"
 namespace microIoT {
     let IIC_ADDRESS = 0x16
     let Topic0CallBack: Action = null;

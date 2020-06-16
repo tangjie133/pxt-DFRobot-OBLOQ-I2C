@@ -1,6 +1,6 @@
 {
     "name": "DFRobot_WiFi_IoT_Module(I2C)",
-    "version": "0.0.12",
+    "version": "0.1.0",
     "description": "",
     "dependencies": {
         "core": "*",
